@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hexo Blog Cheatsheet</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      .button-bg {
+        background-size: cover !important;
+        width: 25px;
+        height: 25px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body style="width: 250px">
+    <h5>Hexo Blog Cheatsheet</h5>
+    <div style="width: 100%">
+      <button id="headerButton" data-toggle="tooltip" data-placement="bottom" title="Header"
+        style="background: url(images/document-header.png);" class="button-bg">
+      </button>
+      <button id="moreButton" data-toggle="tooltip" data-placement="bottom" title="More"
+        style="background: url(images/more.png);" class="button-bg">
+      </button>
+      <button id="codeButton" data-toggle="tooltip" data-placement="bottom" title="Code"
+        style="background: url(images/code.png);" class="button-bg">
+      </button>
+    </div>
+    <hr />
+    <div style="width: 100%">
+      <textarea id="helpText" style="width: 100%; height: 100px;"></textarea>
+    </div>
+    <hr />
+    <div style="font-size: 8px;">Icons made by <a href="http://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
