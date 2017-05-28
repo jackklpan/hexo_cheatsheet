@@ -31,6 +31,37 @@ Note: use \\_ instead of _`
   document.getElementById("helpText").value = text;
 }
 
+//image from clipboard
+document.onpaste = function(event) {
+  var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+  //console.log(JSON.stringify(items)); // will give you the mime types
+  for (index in items) {
+    var item = items[index];
+    if (item.kind === 'file') {
+      var blob = item.getAsFile();
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        console.log(event.target.result);
+        $.ajax({
+          url: 'https://api.imgur.com/3/image',
+          method: 'POST',
+          headers: {
+            Authorization: 'Client-ID df19982cff02728'
+          },
+          data: {
+            image: event.target.result.replace(/^data:image\/(png|jpg);base64,/, ""),
+            type: 'base64'
+          },
+          success: function(result) {
+            document.getElementById("helpText").value = "![](" + result["data"]["link"] + ")";
+          }
+        });
+      }; // data url!
+      reader.readAsDataURL(blob);
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   $('[data-toggle="tooltip"]').tooltip();
 
