@@ -22,6 +22,11 @@ function insertHelpText(type) {
   } else if (type == "code") {
     text = `\`\`\`bash
 \`\`\``;
+  } else if (type == "math") {
+    text = `Inline:
+\\(\\)
+Display:
+\\[\\]`
   }
   document.getElementById("helpText").value = text;
 }
@@ -37,5 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   document.getElementById('codeButton').addEventListener('click', function() {
     insertHelpText("code");
+  });
+  document.getElementById('mathButton').addEventListener('click', function() {
+    insertHelpText("math");
   });
 });
