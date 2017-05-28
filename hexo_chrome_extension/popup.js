@@ -23,10 +23,10 @@ function insertHelpText(type) {
     text = `\`\`\`bash
 \`\`\``;
   } else if (type == "math") {
-    text = `Inline:
-\\\\(\\\\)
-Display:
-$$$$`
+    text = `Inline: \\\\( \\\\)
+Display: $$ $$
+
+Note: use \\_ instead of _`
   }
   document.getElementById("helpText").value = text;
 }
