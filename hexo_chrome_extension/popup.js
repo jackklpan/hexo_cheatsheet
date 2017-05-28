@@ -24,9 +24,9 @@ function insertHelpText(type) {
 \`\`\``;
   } else if (type == "math") {
     text = `Inline:
-\\(\\)
+\\\\(\\\\)
 Display:
-\\[\\]`
+$$$$`
   }
   document.getElementById("helpText").value = text;
 }
